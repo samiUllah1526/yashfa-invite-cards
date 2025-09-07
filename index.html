@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Cards</title>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Rouge+Script&family=Dancing+Script:wght@400..700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body {
+            background: #411A69;
+            color: #fff;
+            line-height: 1.6;
+        }
+        
+      
+     
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+            z-index: 1001;
+        }
+        
+        .logo p {
+            font-family: 'Dancing Script', cursive;
+            font-weight: 200;
+            letter-spacing: 2px;
+            font-style: normal;
+            font-size: 22px;
+            margin-top: 1px;
+            color: #fff;
+            margin-left: 0;
+        }
+        
+        /* Desktop Navigation */
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: #D8B4FE;
+        }
+        
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -6px;
+            height: 2px;
+            background: #D8B4FE;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .25s ease;
+        }
+        
+        nav a:hover::after,
+        nav a.active::after {
+            transform: scaleX(1);
+        }
+        
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .hamburger span {
+            height: 3px;
+            width: 100%;
+            background-color: #fff;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        
+        /* Mobile Navigation */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+              
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 70%;
+                flex-direction: column;
+                background: #411A69;
+                align-items: center;
+                justify-content: center;
+                gap: 40px;
+                transition: right 0.3s ease;
+                z-index: 1000;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            nav ul.active {
+                right: 0;
+            }
+            
+            .hamburger.active span:nth-child(1) {
+                transform: translateY(9px) rotate(45deg);
+            }
+            
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active span:nth-child(3) {
+                transform: translateY(-9px) rotate(-45deg);
+            }
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+
+    <header>
+      <div class="header">
+
+        <div class="logo">
+            <a href="./index.html"><img  src="./img/LOGO (1).png" alt=""></a>
+        </div>
+           <!-- Hamburger Menu -->
+        <div  class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+       
+        </div>
+        
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="./index.html" class="active">Home</a></li>
+                <li><a href="./cards.html">Cards</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="contactus.html">Contact us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+  <!-- Hero Section -->
+<section class="hero">
+  <div class="images-placeholder">
+    <!-- Column 1 -->
+    <div class="col1">
+      <div class="img-box box1">
+        <img src="./img/Rectangle 4.png" alt="">
+      </div>
+      <div class="col1-bottom">
+        <div class="img-box box4">
+          <img src="./img/Rectangle 6.png" alt="">
+        </div>
+        <div class="img-box box5">
+          <img src="./img/Rectangle 7.png" alt="">
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 2 -->
+    <div class="col2">
+      <div class="col2-top" style="display: flex !important; flex-direction: column !important;">
+        <div class="img-box box2">
+          <img src="./img/Rectangle 5.png" alt="">
+        </div>
+        <div class="img-box box3">
+          <img src="./img/Rectangle 6.png" alt="">
+        </div>
+      </div>
+      <div class="img-box box6">
+        <img src="./img/Rectangle 17.png" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-text">
+    <h1>We Provide Premium <br> Digital Cards</h1>
+    <p>Custom Made, Beautifully Designed, Instantly Delivered</p>
+    <button class="btns" onclick="location.href='./cards.html'">Explore Cards</button>
+  </div>
+</section>
+
+
+    <!-- Why Choose Section -->
+    <section class="why-choose">
+        <h1>Why Choose Our <span style="color: #D8B4FE;">Digital Cards</span></h1>
+        <div class="features">
+            <div class="feature-card">
+                <div class="card-icon" style="background: linear-gradient(135deg, #C029FF, #F94A8C);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path>
+                        <path d="M8.5 8.5v.01"></path>
+                        <path d="M16 15.5v.01"></path>
+                        <path d="M12 12v.01"></path>
+                        <path d="M11 17v.01"></path>
+                        <path d="M7 14v.01"></path>
+                    </svg>
+                </div>
+                <div class="featuer-flex">
+                    <h3>Custom Designs</h3>
+                    <p>Tailored for Your Unique Style and Preferences</p>
+                </div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="card-icon" style="background: linear-gradient(135deg, #C029FF, #F94A8C);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                </div>
+                <div class="featuer-flex">
+                    <h3>Instant Delivery</h3>
+                    <p>Get Your Digital Card Delivered Instantly</p>
+                </div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="card-icon" style="background: linear-gradient(135deg, #C029FF, #F94A8C);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="1" x2="12" y2="23"></line>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
+                </div>
+                <div class="featuer-flex">
+                    <h3>Affordable Prices</h3>
+                    <p>Premium Quality at Budget-Friendly Prices</p>
+                </div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="card-icon" style="background: linear-gradient(135deg, #C029FF, #F94A8C);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                        <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                    </svg>
+                </div>
+                <div class="featuer-flex">
+                    <h3>Unique Themes</h3>
+                    <p>Stand Out with Our Exclusive Design Collection</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+<style>
+
+
+.feature-card {
+    background: #D9D9D9;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-icon {
+    padding: 1rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 1rem 20px;
+
+}
+
+
+@media (max-width: 768px) {
+    .features {
+        grid-template-columns: 1fr;
+    }
+    
+    .why-choose h1 {
+        font-size: 2rem;
+    }
+}
+</style>
+
+    <!-- About Section -->
+    <section class="about">
+        <h2 style="font-size: 2rem; font-weight: bold;">About Our Story</h2>
+        <p>
+            "Creative Digital & Aesthetic Cards! Special Digital Invitation Cards designed to reflect your emotions,
+            crafted with love, creativity & memories. Making Your Special Occasions More Memorable!"
+        </p>
+        <button class="btns" onclick="location.href='./about.html'">Learn More</button>
+    </section>
+
+    <footer>
+        <p>OUR SOCIALS</p>
+        <div class="socials">
+            <a href="https://www.tiktok.com/@designby__yashfa007" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-tiktok"></i> Tiktok
+            </a>
+            <a href="https://www.instagram.com/designby___yashfa007/" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://www.linkedin.com/in/yashfa-arshad-4016a1377/" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <span class="email-text">
+                <i class="fas fa-envelope"></i> yashfaarshad72@gmail.com
+            </span>
+        </div>
+        <div class="copyright">
+            © 2025 Nikkah Digital Invitations. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger menu functionality
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target) && navMenu.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

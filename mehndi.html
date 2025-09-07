@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mehndi |Digital Invitations</title>
+    <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Rouge+Script&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        body {
+            background:#411A69;
+            color: #fff;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* Header Section */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #D8B4FE;
+        }
+        
+        /* Category Buttons - Styled as original */
+        .card-btn-wrapper {
+            position: relative;
+            margin: 40px 0;
+            width: 100%;
+        }
+        
+        .card-btn {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        /* Style the anchor tags to look like buttons */
+        .btnss {
+            display: inline-block;
+            padding: 12px 25px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            border-radius: 30px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.3s;
+            text-decoration: none;
+            font-weight: 500;
+            text-align: center;
+        }
+        
+        .btnss:hover, .btnss.active {
+            background: linear-gradient(135deg, #C029FF, #F94A8C);
+            border-color: transparent;
+            color: white;
+            text-decoration: none;
+        }
+        
+        /* Mobile slider styles (under 780px) */
+        @media (max-width: 780px) {
+            .card-btn-wrapper {
+                padding: 0 40px; /* Make space for arrows */
+            }
+            
+            .card-btn {
+                display: flex;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+                justify-content: flex-start;
+                padding: 10px 0;
+                scroll-behavior: smooth;
+            }
+            
+            .card-btn::-webkit-scrollbar {
+                display: none;
+            }
+            
+            .btnss {
+                flex: 0 0 auto;
+            }
+            
+            /* Navigation arrows */
+            .prev-btn, .next-btn {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 40px;
+                height: 40px;
+                background: rgba(255, 255, 255, 0.2);
+                color: white;
+                border: none;
+                border-radius: 50%;
+                cursor: pointer;
+                z-index: 10;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: bold;
+                font-size: 18px;
+            }
+            
+            .prev-btn {
+                left: 0;
+            }
+            
+            .next-btn {
+                right: 0;
+            }
+            
+            .prev-btn:hover, .next-btn:hover {
+                background: linear-gradient(135deg, #C029FF, #F94A8C);
+            }
+        }
+        
+        /* Hide navigation arrows by default (for desktop) */
+        .prev-btn, .next-btn {
+            display: none;
+        }
+        
+        /* Hero Text */
+        .hero-text {
+            text-align: center;
+            margin: 40px 0;
+        }
+        .hero-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #C029FF, #F94A8C);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Products Section - Updated for responsive grid */
+        .product-flex {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .products {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: row;
+            background:#411A69;
+            border:#FFFFFFBD 0.5px solid;
+            width: 100%;
+            height: 426px;
+        }
+        
+        .product-image {
+            width: 300px;
+            height: 340px;
+           background-color: #fafafa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            margin: 2rem;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+            display: block;
+             padding: 2px 2px;
+        }
+        
+        .product-info {
+            padding: 20px;
+            color: #fff;
+            margin: auto;
+            width: 100%;
+        }
+        
+        .product-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            color: #fff;
+        }
+        
+        .product-price {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #F94A8C;
+            margin-bottom: 15px;
+        }
+        
+        .view-detail {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #C029FF, #F94A8C);
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: transform 0.3s;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .view-detail:hover {
+            transform: translateY(-3px);
+        }
+        
+        /* No results message */
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            font-size: 1.2rem;
+            color: #D8B4FE;
+            display: none;
+        }
+        
+        /* Responsive product grid */
+        @media (max-width: 1200px) {
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .product-card {
+                max-width: 100%;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .product-card {
+                flex-direction: column;
+                height: auto;
+            }
+            .product-image {
+                width: 85%;
+                height: 250px;
+                margin: 2rem auto 1rem;
+            }
+        }
+        
+        /* Mobile view - 1 product per row */
+        @media (max-width: 768px) {
+            .products {
+                grid-template-columns: 1fr; /* Only 1 column on mobile */
+                gap: 20px;
+            }
+            
+            .product-card {
+                margin: 0 auto;
+                max-width: 400px;
+            }
+            
+            header {
+                flex-direction: column;
+                padding: 20px;
+            }
+            nav ul {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+           
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .card-btn-wrapper {
+                padding: 0 35px;
+            }
+            .btnss {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+            
+            .product-info h3 {
+                font-size: 1.2rem;
+            }
+            
+            .view-detail {
+                padding: 12px 25px;
+                font-size: 16px;
+            }
+        }
+        
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            background: linear-gradient(
+                to bottom,
+                #271848 0%,      /* top dark */
+                #6a1b9a 50%,     /* center light */
+                #271848 100%     /* bottom dark */
+            );
+            margin-top: 60px;
+            padding-left: 2rem;
+        }
+        footer p {
+            font-size: 1.9rem;
+            margin-bottom: 20px;
+        }
+        .socials {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .socials a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .socials a:hover {
+            color: #F94A8C;
+        }
+        
+        /* Modal image styling */
+        .modal-product-img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+        
+    
+        
+        /* Nav link underline */
+        nav a {
+            position: relative;
+        }
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -6px;
+            height: 2px;
+            background: #D8B4FE;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .25s ease;
+        }
+        nav a:hover::after,
+        nav a.active::after {
+            transform: scaleX(1);
+        }
+    </style>
+</head>
+<body>
+  
+       <header>
+      <div class="header">
+
+        <div class="logo" style="text-align:start; height: 111px !important; ">
+            <a href="./index.html"><img style="padding-right: 4rem;"  src="./img/LOGO (1).png" alt=""></a>
+        </div>
+           <!-- Hamburger Menu -->
+        <div  class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+       
+        </div>
+        
+        <nav>
+            <ul id="nav-menu" style="padding-top:1rem !important ;">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./cards.html" class="active">Cards</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="contactus.html">Contact us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+       <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search invitations...">
+            <button type="submit" id="searchButton">Search</button>
+        </div>
+        
+        <!-- Category Buttons - Using anchor tags as provided -->
+        <div class="card-btn-wrapper">
+            <button class="prev-btn">&#10094;</button>
+            
+            <div class="card-btn">
+                <a href="./cards.html" class="btnss">All</a>
+                <a href="./nikkah.html" class="btnss ">Nikkah</a>
+                <a href="./engage.html" class="btnss">Engage</a>
+                <a href="./mehndi.html" class="btnss active">Mehndi</a>
+                <a href="./barat.html" class="btnss">Barat</a>
+                <a href="./walima.html" class="btnss">Walima</a>
+                <a href="./birthday.html" class="btnss">Birthday</a>
+                <a href="./customize.html" class="btnss">Customize</a>
+            </div>
+            
+            <button class="next-btn">&#10095;</button>
+        </div>
+
+        <div class="hero-text">
+            <h1>Mehndi Digital Invitations</h1>
+        </div>
+        
+        <!-- No results message -->
+        <div class="no-results" id="noResults">
+            No matching cards found. Please try a different search term.
+        </div>
+        
+        <!-- Products Section - Updated for responsive layout -->
+        <div class="product-flex" id="productContainer">
+            <!-- Row 1 -->
+            <div class="products">
+                <div class="product-card" data-category="mehndi" data-title="elegant rose gold">
+                    <div class="product-image">
+                        <img src="./img/MEHNDI CARD 8.png" alt="Elegant Rose Gold">
+                    </div>
+                    <div class="product-info">
+                        <h3>Golden Charm - Digital Mehndi Card</h3>
+                        <div class="product-price">Rs. 450/-</div>
+                        <button class="view-detail" data-bs-toggle="modal" data-bs-target="#productDetailModal" 
+                            data-img="./img/MEHNDI CARD 8.png" 
+                            data-title="Golden Charm - Digital Mehndi Card" 
+                            data-price="Rs. 450/-">
+                            View Detail
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="mehndi" data-title="luxury gold">
+                    <div class="product-image">
+                        <img src="./img/MEHNDI CARD 7.png" alt="Luxury Gold">
+                    </div>
+                    <div class="product-info">
+                        <h3>Green Dream - Digital Mehndi Card</h3>
+                        <div class="product-price">Rs. 450/-</div>
+                        <button class="view-detail" data-bs-toggle="modal" data-bs-target="#productDetailModal" 
+                            data-img="./img/MEHNDI CARD 7.png" 
+                            data-title="Green Dream - Digital Mehndi Card" 
+                            data-price="Rs. 450/-">
+                            View Detail
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Row 2 -->
+            <div class="products">
+                <div class="product-card" data-category="mehndi" data-title="classic design">
+                    <div class="product-image">
+                        <img src="./img/MEHNDI CARD  2 RS.450.png" alt="Classic Design">
+                    </div>
+                    <div class="product-info">
+                        <h3>Festive Vibes - Digital Mehndi Card</h3>
+                        <div class="product-price">Rs.450/-</div>
+                        <button class="view-detail" data-bs-toggle="modal" data-bs-target="#productDetailModal" 
+                            data-img="./img/MEHNDI CARD  2 RS.450.png" 
+                            data-title="Festive Vibes - Digital Mehndi Card" 
+                            data-price="Rs.450/-">
+                            View Detail
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="mehndi" data-title="modern design">
+                    <div class="product-image">
+                        <img src="./img/MEHNDI CARD (8).png" alt="Modern Design">
+                    </div>
+                    <div class="product-info">
+                        <h3>Sparkle Love - Digital Mehndi Card</h3>
+                        <div class="product-price">Rs. 450/-</div>
+                        <button class="view-detail" data-bs-toggle="modal" data-bs-target="#productDetailModal" 
+                            data-img="./img/MEHNDI CARD (8).png" 
+                            data-title="Sparkle Love - Digital Mehndi Card" 
+                            data-price="Rs. 450/-">
+                            View Detail
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Row 3 -->
+            <div class="products">
+                <div class="product-card" data-category="mehndi" data-title="traditional">
+                    <div class="product-image">
+                        <img src="./img/MEHNDI CARD 3 RS.450.png" alt="Traditional Design">
+                    </div>
+                    <div class="product-info">
+                        <h3>Royal Curtain - Digital Mehnadi Card</h3>
+                        <div class="product-price">Rs. 450/-</div>
+                        <button class="view-detail" data-bs-toggle="modal" data-bs-target="#productDetailModal" 
+                            data-img="./img/MEHNDI CARD 3 RS.450.png" 
+                            data-title="Royal Curtain - Digital Mehnadi Card" 
+                            data-price="Rs. 450/-">
+                            View Detail
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="mehndi" data-title="premium design">
+                    <div class="product-image">
+                        <img src="./img/MEHNDI CARD 4 RS.450.png" alt="Premium Design">
+                    </div>
+                    <div class="product-info">
+                        <h3>“Outdoor Garden - Digital Mehndi Card</h3>
+                        <div class="product-price">Rs. 450/-</div>
+                        <button class="view-detail" data-bs-toggle="modal" data-bs-target="#productDetailModal" 
+                            data-img="./img/MEHNDI CARD 4 RS.450.png" 
+                            data-title="“Outdoor Garden - Digital Mehndi Card" 
+                            data-price="Rs. 450/-">
+                            View Detail
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Row 4 -->
+            <div class="products">
+                <div class="product-card" data-category="mehndi" data-title="floral design">
+                    <div class="product-image">
+                        <img src="./img/MEHNDI CARD.png" alt="Floral Design">
+                    </div>
+                    <div class="product-info">
+                        <h3>Classic Green - Digital Mehndi Card</h3>
+                        <div class="product-price">Rs. 450/-</div>
+                        <button class="view-detail" data-bs-toggle="modal" data-bs-target="#productDetailModal" 
+                            data-img="./img/MEHNDI CARD.png" 
+                            data-title="Classic Green - Digital Mehndi Card" 
+                            data-price="Rs. 450/-">
+                            View Detail
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="mehndi" data-title="minimalist design">
+                    <div class="product-image">
+                        <img src="./img/MEHNDI CARD 6.png" alt="Minimalist Design">
+                    </div>
+                    <div class="product-info">
+                        <h3>Golden Drape - Digital Mehndi Card</h3>
+                        <div class="product-price">Rs. 450/-</div>
+                        <button class="view-detail" data-bs-toggle="modal" data-bs-target="#productDetailModal" 
+                            data-img="./img/MEHNDI CARD 6.png" 
+                            data-title="Golden Drape - Digital Mehndi Card" 
+                            data-price="Rs. 450/-">
+                            View Detail
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Row 5 -->
+            <!-- <div class="products">
+                <div class="product-card" data-category="mehndi" data-title="vintage design">
+                    <div class="product-image">
+                        <img src="./img/nikkah 99.jpeg" alt="Vintage Design">
+                    </div>
+                    <div class="product-info">
+                        <h3>Vintage Design For Ayesha</h3>
+                        <div class="product-price">Rs. 370</div>
+                        <button class="view-detail" data-bs-toggle="modal" data-bs-target="#productDetailModal" 
+                            data-img="./img/nikkah 99.jpeg" 
+                            data-title="Vintage Nikkah Invitation" 
+                            data-price="Rs. 370">
+                            View Detail
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="mehndi" data-title="royal design">
+                    <div class="product-image">
+                        <img src="./img/Nikkah cards.png" alt="Royal Design">
+                    </div>
+                    <div class="product-info">
+                        <h3>Royal Design For Omar</h3>
+                        <div class="product-price">Rs. 550</div>
+                        <button class="view-detail" data-bs-toggle="modal" data-bs-target="#productDetailModal" 
+                            data-img="./img/Nikkah cards.png" 
+                            data-title="Royal Nikkah Invitation" 
+                            data-price="Rs. 550">
+                            View Detail
+                        </button>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    
+    <!-- View Detail Modal (Images Only) -->
+    <div class="modal fade" id="productDetailModal" tabindex="-1" aria-labelledby="productDetailLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content" style="background:#411A69; color:#fff; border-radius:15px;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productDetailLabel">Product Details</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Image Container -->
+                    <div id="mediaContainer">
+                        <img id="modalProductImg" src="" alt="Product" class="img-fluid rounded mb-3 modal-product-img">
+                    </div>
+                    <h4 id="modalProductTitle"></h4>
+                    <p id="modalProductDesc">
+                          This card can be easily shared via WhatsApp.
+Font style and text changes are available on this design.
+For completely different theme, please click on <a style="color:  #f94a8c; font-weight:bold ;" href="./customize.html">"Customize"</a>
+                    </p>
+                    <div class="product-price" id="modalProductPrice"></div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    <a href="./contactus.html" class="btn btn-primary" style="background:linear-gradient(135deg, #C029FF, #F94A8C); border:none;">Order Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>OUR SOCIALS</p>
+        <div class="socials">
+            <a href="https://www.tiktok.com/@designby__yashfa007" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-tiktok"></i> Tiktok
+            </a>
+            <a href="https://www.instagram.com/designby___yashfa007/" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://www.linkedin.com/in/yashfa-arshad-4016a1377/" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <span class="email-text">
+                <i class="fas fa-envelope"></i> yashfaarshad72@gmail.com
+            </span>
+        </div>
+        <div class="copyright">
+            © 2025 Nikkah Digital Invitations. All rights reserved.
+        </div>
+    </footer>
+    
+    <script>
+        // Function to handle the category slider
+        function initCategorySlider() {
+            const cardBtnWrapper = document.querySelector('.card-btn-wrapper');
+            const cardBtn = document.querySelector('.card-btn');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            const buttons = document.querySelectorAll('.btnss');
+            
+            // Check if we're on a mobile screen
+            if (window.innerWidth <= 780) {
+                // Show navigation buttons
+                prevBtn.style.display = 'flex';
+                nextBtn.style.display = 'flex';
+                
+                // Set up navigation
+                let scrollAmount = 0;
+                const scrollStep = 200;
+                const maxScroll = cardBtn.scrollWidth - cardBtn.clientWidth;
+                
+                prevBtn.addEventListener('click', () => {
+                    scrollAmount = Math.max(scrollAmount - scrollStep, 0);
+                    cardBtn.scrollTo({
+                        left: scrollAmount,
+                        behavior: 'smooth'
+                    });
+                });
+                
+                nextBtn.addEventListener('click', () => {
+                    scrollAmount = Math.min(scrollAmount + scrollStep, maxScroll);
+                    cardBtn.scrollTo({
+                        left: scrollAmount,
+                        behavior: 'smooth'
+                    });
+                });
+            } else {
+                // Hide navigation buttons on desktop
+                prevBtn.style.display = 'none';
+                nextBtn.style.display = 'none';
+            }
+            
+            // Add active class to buttons when clicked
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    // Don't prevent default to allow navigation
+                    buttons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        }
+        
+        // Search functionality
+        function initSearch() {
+            const searchInput = document.getElementById('searchInput');
+            const searchButton = document.getElementById('searchButton');
+            const productCards = document.querySelectorAll('.product-card');
+            const noResults = document.getElementById('noResults');
+            const productContainer = document.getElementById('productContainer');
+            
+            function performSearch() {
+                const searchTerm = searchInput.value.toLowerCase().trim();
+                let hasResults = false;
+                
+                if (searchTerm === '') {
+                    // Show all products if search is empty
+                    productCards.forEach(card => {
+                        card.style.display = 'flex';
+                        card.closest('.products').style.display = 'grid';
+                    });
+                    noResults.style.display = 'none';
+                    return;
+                }
+                
+                // Hide all products first
+                productCards.forEach(card => {
+                    card.style.display = 'none';
+                    card.closest('.products').style.display = 'none';
+                });
+                
+                // Show products that match the search term
+                productCards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    const title = card.getAttribute('data-title');
+                    
+                    if (category.includes(searchTerm) || title.includes(searchTerm)) {
+                        card.style.display = 'flex';
+                        card.closest('.products').style.display = 'grid';
+                        hasResults = true;
+                    }
+                });
+                
+                // Show no results message if no matches found
+                if (!hasResults) {
+                    noResults.style.display = 'block';
+                } else {
+                    noResults.style.display = 'none';
+                }
+            }
+            
+            // Add event listeners
+            searchButton.addEventListener('click', performSearch);
+            searchInput.addEventListener('keyup', (e) => {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
+        }
+        
+        // Modal functionality (images only)
+        function initModal() {
+            const modalProductImg = document.getElementById('modalProductImg');
+            const modalProductTitle = document.getElementById('modalProductTitle');
+            const modalProductPrice = document.getElementById('modalProductPrice');
+            
+            // Add event listeners to all view detail buttons
+            document.querySelectorAll('.view-detail').forEach(button => {
+                button.addEventListener('click', function() {
+                    // Get data from the button's data attributes
+                    const imgSrc = this.getAttribute('data-img');
+                    const title = this.getAttribute('data-title');
+                    const price = this.getAttribute('data-price');
+                    
+                    // Update modal content
+                    modalProductImg.src = imgSrc;
+                    modalProductTitle.textContent = title;
+                    modalProductPrice.textContent = price;
+                });
+            });
+            
+            // Reset modal when it's closed
+            const productDetailModal = document.getElementById('productDetailModal');
+            productDetailModal.addEventListener('hidden.bs.modal', function () {
+                modalProductImg.src = '';
+                modalProductTitle.textContent = '';
+                modalProductPrice.textContent = '';
+            });
+        }
+        
+        // Set active nav link
+        function setActiveNavLink() {
+            const current = location.pathname.split("/").pop() || "index.html";
+            document.querySelectorAll("nav a").forEach(a => {
+                const href = a.getAttribute("href");
+                if (href === current) {
+                    a.classList.add("active");
+                }
+            });
+        }
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            initCategorySlider();
+            initSearch();
+            setActiveNavLink();
+            initModal();
+        });
+        
+        // Reinitialize on window resize
+        window.addEventListener('resize', initCategorySlider);
+
+
+
+
+
+
+
+
+
+
+         // Hamburger menu functionality
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target) && navMenu.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
