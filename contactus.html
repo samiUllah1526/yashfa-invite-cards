@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Digital Invitations</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="toast.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Rouge+Script&display=swap'); 
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Rouge+Script&display=swap');
     </style>
     <style>
-       
-     .header{
-  margin-right: 4rem;
-}
-        
+        .header {
+            margin-right: 4rem;
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
-        
-     
-        
+
+
+
         /* Page Title */
         .page-title {
             text-align: center;
             margin-bottom: 40px;
         }
-        
+
         .page-title h1 {
             font-size: 2.5rem;
             color: white !important;
@@ -40,12 +40,12 @@
             /* -webkit-background-clip: text;
             -webkit-text-fill-color: transparent; */
         }
-        
+
         .page-title p {
             color: #D8B4FE;
             font-size: 1.1rem;
         }
-        
+
         /* Contact Section */
         .contact-section {
             display: flex;
@@ -53,7 +53,7 @@
             gap: 40px;
             margin-bottom: 60px;
         }
-        
+
         .contact-form {
             flex: 1;
             min-width: 300px;
@@ -62,7 +62,7 @@
             border-radius: 15px;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
+
         .contact-form h2 {
             font-size: 1.8rem;
             margin-bottom: 25px;
@@ -70,18 +70,18 @@
             padding-bottom: 10px;
             border-bottom: 2px solid #D8B4FE;
         }
-        
+
         .form-group {
             margin-bottom: 20px;
         }
-        
+
         .form-group label {
             display: block;
             margin-bottom: 8px;
             font-weight: 500;
             color: #D8B4FE;
         }
-        
+
         .form-group input,
         .form-group textarea {
             width: 100%;
@@ -93,23 +93,23 @@
             font-size: 16px;
             transition: border-color 0.3s;
         }
-        
+
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: #C029FF;
         }
-        
+
         .form-group input::placeholder,
         .form-group textarea::placeholder {
             color: rgba(255, 255, 255, 0.6);
         }
-        
+
         .form-group textarea {
             height: 150px;
             resize: vertical;
         }
-        
+
         .send-btn {
             padding: 12px 30px;
             background: linear-gradient(135deg, #C029FF, #F94A8C);
@@ -121,86 +121,88 @@
             font-size: 16px;
             transition: transform 0.3s, box-shadow 0.3s;
         }
-        
+
         .send-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(192, 41, 255, 0.4);
         }
-        
-      .contact-info {
-    flex: 1;
-    min-width: 280px;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-}
 
-.contact-info h2 {
-    font-size: 1.8rem;
-    margin-bottom: 25px;
-    color: #fff;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #D8B4FE;
-    text-align: center;
-}
+        .contact-info {
+            flex: 1;
+            min-width: 280px;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-.info-item {
-    margin-bottom: 20px;
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
+        .contact-info h2 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #fff;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #D8B4FE;
+            text-align: center;
+        }
 
-.info-item h3 {
-    font-size: 1.1rem;
-    margin-bottom: 8px;
-    color: #fff;
-    display: flex;
-    align-items: center;
-}
+        .info-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
-.info-item h3 i {
-    margin-right: 10px;
-    color: #D8B4FE;
-}
+        .info-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+        }
+
+        .info-item h3 i {
+            margin-right: 10px;
+            color: #D8B4FE;
+        }
 
 
-.info-item p a {
-    color: #D8B4FE;
-    /* margin-left: 28px; */
-    word-break: break-word;
-    font-size: 0.95rem;
-}
-.info-item p{
-       color: #D8B4FE;
-    /* margin-left: 28px; */
-    word-break: break-word;
-    font-size: 0.95rem
-}
+        .info-item p a {
+            color: #D8B4FE;
+            /* margin-left: 28px; */
+            word-break: break-word;
+            font-size: 0.95rem;
+        }
 
-/* 🌐 Responsive Design */
+        .info-item p {
+            color: #D8B4FE;
+            /* margin-left: 28px; */
+            word-break: break-word;
+            font-size: 0.95rem
+        }
 
-/* Tablet */
-@media (max-width: 992px) {
-    .contact-info {
-        max-width: 90%;
-        padding: 15px;
-    }
+        /* 🌐 Responsive Design */
 
-    .contact-info h2 {
-        font-size: 1.6rem;
-    }
+        /* Tablet */
+        @media (max-width: 992px) {
+            .contact-info {
+                max-width: 90%;
+                padding: 15px;
+            }
 
-    .info-item h3 {
-        font-size: 1rem;
-    }
+            .contact-info h2 {
+                font-size: 1.6rem;
+            }
 
-    .info-item p,
-    .info-item p a {
-        font-size: 0.9rem;
-    }
-}
+            .info-item h3 {
+                font-size: 1rem;
+            }
+
+            .info-item p,
+            .info-item p a {
+                font-size: 0.9rem;
+            }
+        }
+
         /* Payment Methods */
         .payment-section {
             background: rgba(255, 255, 255, 0.05);
@@ -209,19 +211,19 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             margin-bottom: 40px;
         }
-        
+
         .payment-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 15px;
         }
-        
+
         .payment-section h2 {
             font-size: 1.8rem;
             color: #fff;
         }
-        
+
         .payment-img {
             width: 150px;
             height: auto;
@@ -234,20 +236,20 @@
             color: white;
             font-weight: bold;
         }
-        
+
         .payment-desc {
             color: #D8B4FE;
             margin-bottom: 25px;
             font-size: 1.1rem;
             line-height: 1.6;
         }
-        
+
         .payment-options {
             display: flex;
             flex-wrap: wrap;
             gap: 15px;
         }
-        
+
         .payment-option {
             flex: 1;
             min-width: 200px;
@@ -257,45 +259,45 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-left: 4px solid #C029FF;
         }
-        
+
         .payment-option h3 {
             font-size: 1.1rem;
             margin-bottom: 10px;
             color: #fff;
         }
-        
+
         .payment-option p {
             color: #D8B4FE;
             font-size: 0.9rem;
         }
-        
-       
+
+
         /* Responsive Design */
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
                 /* text-align: center; */
             }
-            
+
             nav ul {
                 margin-top: 15px;
                 justify-content: center;
             }
-            
+
             .contact-section {
                 flex-direction: column;
             }
-            
+
             .payment-header {
                 flex-direction: column;
                 text-align: center;
                 gap: 15px;
             }
-            
+
             .payment-options {
                 flex-direction: column;
             }
-            
+
             .socials {
                 flex-direction: column;
                 gap: 15px;
@@ -303,89 +305,91 @@
         }
 
 
-        
-/* 🌐 Responsive Design */
 
-/* Tablet */
-@media (max-width: 992px) {
-    .contact-info {
-        max-width: 90%;
-        padding: 15px;
-    }
+        /* 🌐 Responsive Design */
 
-    .contact-info h2 {
-        font-size: 1.6rem;
-    }
+        /* Tablet */
+        @media (max-width: 992px) {
+            .contact-info {
+                max-width: 90%;
+                padding: 15px;
+            }
 
-    .info-item h3 {
-        font-size: 1rem;
-    }
+            .contact-info h2 {
+                font-size: 1.6rem;
+            }
 
-    .info-item p,
-    .info-item p a {
-        font-size: 0.9rem;
-    }
-}
+            .info-item h3 {
+                font-size: 1rem;
+            }
 
-/* Mobile */
-@media (max-width: 600px) {
-    .contact-info {
-        padding: 10px;
-    }
+            .info-item p,
+            .info-item p a {
+                font-size: 0.9rem;
+            }
+        }
 
-    .contact-info h2 {
-        font-size: 1.4rem;
-    }
+        /* Mobile */
+        @media (max-width: 600px) {
+            .contact-info {
+                padding: 10px;
+            }
 
-    .info-item {
-        padding: 12px;
-    }
+            .contact-info h2 {
+                font-size: 1.4rem;
+            }
 
-    .info-item h3 {
-        font-size: 0.95rem;
-    }
+            .info-item {
+                padding: 12px;
+            }
 
-    .info-item p,
-    .info-item p a {
-        font-size: 0.85rem;
-        margin-left: 20px;
-    }
-}
+            .info-item h3 {
+                font-size: 0.95rem;
+            }
+
+            .info-item p,
+            .info-item p a {
+                font-size: 0.85rem;
+                margin-left: 20px;
+            }
+        }
     </style>
-    <script src="script.js"defer></script>
+    <script src="script.js" defer></script>
+    <script src="toast.js" defer></script>
 </head>
-<body>
-      <!-- Navbar -->
 
-     <!-- Navbar -->
+<body>
+    <!-- Navbar -->
+
+    <!-- Navbar -->
 
     <header>
-      <div class="header">
+        <div class="header">
 
-        <div class="logo" style="text-align:start;">
-            <a href="./index.html"><img  src="./img/LOGO (1).png" alt=""></a>
-        </div>
-           <!-- Hamburger Menu -->
-        <div  class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+            <div class="logo" style="text-align:start;">
+                <a href="./index.html"><img src="./img/LOGO (1).png" alt=""></a>
+            </div>
+            <!-- Hamburger Menu -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+
         </div>
 
-       
-        </div>
-        
         <nav>
             <ul id="nav-menu">
                 <li><a href="./index.html">Home</a></li>
                 <li><a href="./cards.html">Cards</a></li>
                 <li><a href="./about.html">About</a></li>
-                <li><a href="contactus.html"  class="active">Contact us</a></li>
+                <li><a href="contactus.html" class="active">Contact us</a></li>
             </ul>
         </nav>
     </header>
     <div class="container">
-    
+
 
 
 
@@ -393,7 +397,7 @@
             <h1 style="color: white !important;">Contact Us</h1>
             <p>Get in touch with us for any inquiries or support</p>
         </div>
-        
+
         <div class="contact-section">
             <div class="contact-form">
                 <h2>Send Us A Message</h2>
@@ -402,159 +406,195 @@
                         <label for="name">Your Name</label>
                         <input type="text" id="name" placeholder="Enter your name" required>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="email">Email Address</label>
                         <input type="email" id="email" placeholder="Enter your email" required>
                     </div>
-                    
-                  
-                    
+
+
+
                     <div class="form-group">
                         <label for="message">Your Message</label>
                         <textarea id="message" placeholder="Type your message here..." required></textarea>
                     </div>
-                    
+
                     <button type="submit" class="send-btn">Send Message</button>
                 </form>
             </div>
-            
-     <div class="contact-info">
-    <h2>Get In Touch</h2>
-    
-    <!-- TikTok -->
-    <div class="info-item">
-        <h3><i class="fab fa-tiktok"></i> TikTok</h3>
-        <p>
+
+            <div class="contact-info">
+                <h2>Get In Touch</h2>
+
+                <!-- TikTok -->
+                <div class="info-item">
+                    <h3><i class="fab fa-tiktok"></i> TikTok</h3>
+                    <p>
+                        <a href="https://www.tiktok.com/@designby__yashfa007" target="_blank" rel="noopener noreferrer">
+                            @designby__yashfa007
+                        </a>
+                    </p>
+                </div>
+
+                <!-- Email -->
+                <div class="info-item">
+                    <h3><i class="fas fa-envelope"></i> Email</h3>
+                    <p>yashfaarshad72@gmail.com</p>
+                </div>
+
+                <!-- Instagram -->
+                <div class="info-item">
+                    <h3><i class="fab fa-instagram"></i> Instagram</h3>
+                    <p>
+                        <a href="https://www.instagram.com/designby___yashfa007/" target="_blank"
+                            rel="noopener noreferrer">
+                            @designby___yashfa007
+                        </a>
+                    </p>
+                </div>
+
+                <!-- LinkedIn -->
+                <div class="info-item">
+                    <h3><i class="fab fa-linkedin"></i> LinkedIn</h3>
+                    <p>
+                        <a href="https://www.linkedin.com/in/yashfa-arshad-4016a1377/" target="_blank"
+                            rel="noopener noreferrer">
+                            Yashfa Arshad
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="payment-section container">
+        <div class="payment-header">
+            <h2>Payment Methods</h2>
+            <div class="payment-img">
+                <img class="payment-img" src="./img/jz.png" alt="">
+            </div>
+        </div>
+        <p class="payment-desc">After payment confirmation, we start customizing your card and deliver it to you on
+            time.</p>
+
+        <div class="payment-options">
+            <div class="payment-option">
+                <h3>Admin Payment Configuration</h3>
+                <p>Secure payment processing for all transactions</p>
+            </div>
+
+            <div class="payment-option">
+                <h3>Customer Service</h3>
+                <p>24/7 support</p>
+            </div>
+
+            <div class="payment-option">
+                <h3>Login & Security</h3>
+                <p>Secure user authentication and data protection</p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    <footer>
+        <p>OUR SOCIALS</p>
+        <div class="socials">
             <a href="https://www.tiktok.com/@designby__yashfa007" target="_blank" rel="noopener noreferrer">
-                @designby__yashfa007
+                <i class="fab fa-tiktok"></i> Tiktok
             </a>
-        </p>
-    </div>
-
-    <!-- Email -->
-    <div class="info-item">
-        <h3><i class="fas fa-envelope"></i> Email</h3>
-        <p>yashfaarshad72@gmail.com</p>
-    </div>
-
-    <!-- Instagram -->
-    <div class="info-item">
-        <h3><i class="fab fa-instagram"></i> Instagram</h3>
-        <p>
             <a href="https://www.instagram.com/designby___yashfa007/" target="_blank" rel="noopener noreferrer">
-                @designby___yashfa007
+                <i class="fab fa-instagram"></i> Instagram
             </a>
-        </p>
-    </div>
-
-    <!-- LinkedIn -->
-    <div class="info-item">
-        <h3><i class="fab fa-linkedin"></i> LinkedIn</h3>
-        <p>
             <a href="https://www.linkedin.com/in/yashfa-arshad-4016a1377/" target="_blank" rel="noopener noreferrer">
-                Yashfa Arshad
+                <i class="fab fa-linkedin"></i> LinkedIn
             </a>
-        </p>
-    </div>
-</div>
-
-
-            </div>
+            <span class="email-text">
+                <i class="fas fa-envelope"></i> yashfaarshad72@gmail.com
+            </span>
         </div>
-        
-        <div class="payment-section container">
-            <div class="payment-header">
-                <h2>Payment Methods</h2>
-                <div class="payment-img">
-                   <img class="payment-img" src="./img/jz.png" alt="">
-                </div>
-            </div>
-            <p class="payment-desc">After payment confirmation, we start customizing your card and deliver it to you on time.</p>
-            
-            <div class="payment-options">
-                <div class="payment-option">
-                    <h3>Admin Payment Configuration</h3>
-                    <p>Secure payment processing for all transactions</p>
-                </div>
-                
-                <div class="payment-option">
-                    <h3>Customer Service</h3>
-                    <p>24/7 support</p>
-                </div>
-                
-                <div class="payment-option">
-                    <h3>Login & Security</h3>
-                    <p>Secure user authentication and data protection</p>
-                </div>
-            </div>
+        <div class="copyright">
+            © 2025 Nikkah Digital Invitations. All rights reserved.
         </div>
-    </div>
-    
+    </footer>
 
-<footer>
-  <p>OUR SOCIALS</p>
-  <div class="socials">
-    <a href="https://www.tiktok.com/@designby__yashfa007" target="_blank" rel="noopener noreferrer">
-      <i class="fab fa-tiktok"></i> Tiktok
-    </a>
-    <a href="https://www.instagram.com/designby___yashfa007/" target="_blank" rel="noopener noreferrer">
-      <i class="fab fa-instagram"></i> Instagram
-    </a>
-    <a href="https://www.linkedin.com/in/yashfa-arshad-4016a1377/" target="_blank" rel="noopener noreferrer">
-      <i class="fab fa-linkedin"></i> LinkedIn
-    </a>
-    <span class="email-text">
-      <i class="fas fa-envelope"></i> yashfaarshad72@gmail.com
-    </span>
-  </div>
-  <div class="copyright">
-    © 2025 Nikkah Digital Invitations. All rights reserved.
-  </div>
-</footer>
 
-    
-  <script>
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("9wNqlVmvMiWghNsFn");
+        })();
+    </script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
 
-    // Form logic
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
+            // Form logic
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
 
-    if (!name || !email || !message) {
-        alert('Please fill in all required fields');
-        return;
-    }
+            if (!name || !email || !message) {
+                toast.warning('Please fill in all required fields');
+                return;
+            }
 
-    alert('Thank you for your message, ' + name + '! We will get back to you soon.');
-    this.reset();
-});
+            const templateParams = {
+                from_name: name,
+                from_email: email,
+                name: email,
+                message: message,
+                to_email: 'yashfaarshad72@gmail.com'
+            };
 
-// ✅ Hamburger menu functionality OUTSIDE form event
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('nav-menu');
+            // Show loading state
+            const submitBtn = this.querySelector('.send-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
+            emailjs.send('service_ibfp1ap', 'template_zximuic', templateParams)
+                .then(function (response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    toast.success(`Thank you for your message, ${name}! We will get back to you soon.`);
+                    document.getElementById('contactForm').reset();
+                }, function (error) {
+                    console.log('FAILED...', error);
+                    toast.error('Sorry, there was an error sending your message. Please try again.');
+                })
+                .finally(() => {
+                    // Reset button state
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                });
+        });
 
-document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-    });
-});
+        // ✅ Hamburger menu functionality OUTSIDE form event
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
 
-document.addEventListener('click', (e) => {
-    if (!hamburger.contains(e.target) && !navMenu.contains(e.target) && navMenu.classList.contains('active')) {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-    }
-});
-</script>
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target) && navMenu.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    </script>
 
 </body>
+
 </html>

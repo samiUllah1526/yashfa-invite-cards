@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toast System Test</title>
+    <link rel="stylesheet" href="toast.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 50px;
+            background: #f5f5f5;
+        }
+        .test-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .test-button {
+            background: linear-gradient(135deg, #C029FF, #F94A8C);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 10px;
+            font-weight: 500;
+        }
+        .test-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(192, 41, 255, 0.3);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🍞 Toast Notification System Test</h1>
+        <p>Click the buttons below to test different types of toast notifications:</p>
+        
+        <button class="test-button" onclick="toast.success('Success! Your action completed successfully.')">
+            ✅ Success Toast
+        </button>
+        
+        <button class="test-button" onclick="toast.error('Error! Something went wrong.')">
+            ❌ Error Toast
+        </button>
+        
+        <button class="test-button" onclick="toast.warning('Warning! Please check your input.')">
+            ⚠️ Warning Toast
+        </button>
+        
+        <button class="test-button" onclick="toast.info('Info! Here is some useful information.')">
+            ℹ️ Info Toast
+        </button>
+        
+        <button class="test-button" onclick="testMultipleToasts()">
+            🎯 Multiple Toasts
+        </button>
+        
+        <button class="test-button" onclick="testLongMessage()">
+            📝 Long Message
+        </button>
+    </div>
+
+    <script src="toast.js"></script>
+    <script>
+        function testMultipleToasts() {
+            toast.success('First toast!');
+            setTimeout(() => toast.info('Second toast!'), 500);
+            setTimeout(() => toast.warning('Third toast!'), 1000);
+        }
+        
+        function testLongMessage() {
+            toast.info('This is a very long message that should wrap properly and demonstrate how the toast system handles longer text content. It should still look good and be readable.');
+        }
+    </script>
+</body>
+</html>
