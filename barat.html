@@ -837,5 +837,53 @@ For completely different theme, please click on <a style="color:  #f94a8c; font-
         // Reinitialize on window resize
         window.addEventListener('resize', initCategorySlider);
     </script>
+    <script type="module">
+        import { cardsData } from './data.js';
+
+        function createCardHtml(item) {
+            const card = document.createElement('div');
+            card.className = 'product-card';
+            card.setAttribute('data-category', 'barat');
+            card.setAttribute('data-title', item.name.toLowerCase());
+
+            card.innerHTML = `
+                <div class="product-image">
+                    <img src="${item.url}" alt="${item.name}">
+                </div>
+                <div class="product-info">
+                    <h3>${item.name}</h3>
+                    <div class="product-price">Rs. ${item.price.replace(/\/$/, '').replace('/.', '/-')}</div>
+                    <button class="view-detail" data-bs-toggle="modal" data-bs-target="#productDetailModal"
+                        data-img="${item.url}"
+                        data-title="${item.name}"
+                        data-price="Rs. ${item.price.replace(/\/$/, '').replace('/.', '/-')}">
+                        View Detail
+                    </button>
+                </div>
+            `;
+            return card;
+        }
+
+        function renderBarat() {
+            const container = document.getElementById('productContainer');
+            if (!container) return;
+            container.innerHTML = '';
+            const list = cardsData.BARAT_CARDS || [];
+            for (let i = 0; i < list.length; i += 2) {
+                const row = document.createElement('div');
+                row.className = 'products';
+                row.appendChild(createCardHtml(list[i]));
+                if (list[i + 1]) row.appendChild(createCardHtml(list[i + 1]));
+                container.appendChild(row);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderBarat();
+            if (typeof window.initModal === 'function') {
+                window.initModal();
+            }
+        });
+    </script>
 </body>
 </html>
