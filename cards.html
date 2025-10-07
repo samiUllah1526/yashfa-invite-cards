@@ -409,7 +409,7 @@
       <div class="header">
 
         <div class="logo" style="text-align:start; height: 111px !important; ">
-            <a href="./index.html"><img  src="./img/LOGO (1).png" alt=""></a>
+            <a href="./index.html"><img  src="https://res.cloudinary.com/dzx8o8drh/image/upload/fl_preserve_transparency/v1758686267/LOGO_1_zgsrcq.jpg" alt=""></a>
         </div>
            <!-- Hamburger Menu -->
         <div  class="hamburger" id="hamburger">
@@ -783,56 +783,63 @@ For completely different theme, please click on <a style="color:  #f94a8c; font-
         function initSearch() {
             const searchInput = document.getElementById('searchInput');
             const searchButton = document.getElementById('searchButton');
-            const productCards = document.querySelectorAll('.product-card');
             const noResults = document.getElementById('noResults');
             const productContainer = document.getElementById('productContainer');
-            
+
             function performSearch() {
+                const productCards = Array.from(document.querySelectorAll('.product-card'));
                 const searchTerm = searchInput.value.toLowerCase().trim();
                 let hasResults = false;
-                
+
                 if (searchTerm === '') {
-                    // Show all products if search is empty
-                    productCards.forEach(card => {
-                        card.style.display = 'flex';
-                        card.closest('.products').style.display = 'grid';
-                    });
+                    if (window.__renderAll) {
+                        window.__renderAll();
+                        if (typeof window.initModal === 'function') window.initModal();
+                    } else {
+                        productCards.forEach(card => {
+                            card.style.display = 'flex';
+                            const row = card.closest('.products');
+                            if (row) row.style.display = 'grid';
+                        });
+                    }
                     noResults.style.display = 'none';
                     return;
                 }
-                
-                // Hide all products first
-                productCards.forEach(card => {
-                    card.style.display = 'none';
-                    card.closest('.products').style.display = 'none';
+
+                const matches = productCards.filter(card => {
+                    const category = card.getAttribute('data-category') || '';
+                    const title = card.getAttribute('data-title') || '';
+                    return category.includes(searchTerm) || title.includes(searchTerm);
                 });
-                
-                // Show products that match the search term
-                productCards.forEach(card => {
-                    const category = card.getAttribute('data-category');
-                    const title = card.getAttribute('data-title');
-                    
-                    if (category.includes(searchTerm) || title.includes(searchTerm)) {
-                        card.style.display = 'flex';
-                        card.closest('.products').style.display = 'grid';
-                        hasResults = true;
-                    }
-                });
-                
-                // Show no results message if no matches found
+
+                hasResults = matches.length > 0;
+
                 if (!hasResults) {
+                    productContainer.innerHTML = '';
                     noResults.style.display = 'block';
-                } else {
-                    noResults.style.display = 'none';
+                    return;
                 }
+
+                // Reflow results into rows of two
+                productContainer.innerHTML = '';
+                for (let i = 0; i < matches.length; i += 2) {
+                    const row = document.createElement('div');
+                    row.className = 'products';
+                    matches[i].style.display = 'flex';
+                    row.appendChild(matches[i]);
+                    if (matches[i + 1]) {
+                        matches[i + 1].style.display = 'flex';
+                        row.appendChild(matches[i + 1]);
+                    }
+                    productContainer.appendChild(row);
+                }
+
+                noResults.style.display = 'none';
             }
-            
-            // Add event listeners
+
             searchButton.addEventListener('click', performSearch);
             searchInput.addEventListener('keyup', (e) => {
-                if (e.key === 'Enter') {
-                    performSearch();
-                }
+                if (e.key === 'Enter') performSearch();
             });
         }
         
@@ -967,6 +974,9 @@ For completely different theme, please click on <a style="color:  #f94a8c; font-
                 container.appendChild(row);
             }
         }
+
+        // Expose renderer for search reset
+        window.__renderAll = renderProductsAll;
 
         document.addEventListener('DOMContentLoaded', () => {
             renderProductsAll();

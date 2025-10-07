@@ -732,56 +732,47 @@ For completely different theme, please click on <a style="color:  #f94a8c; font-
         function initSearch() {
             const searchInput = document.getElementById('searchInput');
             const searchButton = document.getElementById('searchButton');
-            const productCards = document.querySelectorAll('.product-card');
             const noResults = document.getElementById('noResults');
             const productContainer = document.getElementById('productContainer');
-            
+
             function performSearch() {
+                const productCards = document.querySelectorAll('.product-card');
                 const searchTerm = searchInput.value.toLowerCase().trim();
                 let hasResults = false;
-                
+
                 if (searchTerm === '') {
-                    // Show all products if search is empty
                     productCards.forEach(card => {
                         card.style.display = 'flex';
-                        card.closest('.products').style.display = 'grid';
+                        const row = card.closest('.products');
+                        if (row) row.style.display = 'grid';
                     });
                     noResults.style.display = 'none';
                     return;
                 }
-                
-                // Hide all products first
+
                 productCards.forEach(card => {
                     card.style.display = 'none';
-                    card.closest('.products').style.display = 'none';
+                    const row = card.closest('.products');
+                    if (row) row.style.display = 'none';
                 });
-                
-                // Show products that match the search term
+
                 productCards.forEach(card => {
-                    const category = card.getAttribute('data-category');
-                    const title = card.getAttribute('data-title');
-                    
+                    const category = card.getAttribute('data-category') || '';
+                    const title = card.getAttribute('data-title') || '';
                     if (category.includes(searchTerm) || title.includes(searchTerm)) {
                         card.style.display = 'flex';
-                        card.closest('.products').style.display = 'grid';
+                        const row = card.closest('.products');
+                        if (row) row.style.display = 'grid';
                         hasResults = true;
                     }
                 });
-                
-                // Show no results message if no matches found
-                if (!hasResults) {
-                    noResults.style.display = 'block';
-                } else {
-                    noResults.style.display = 'none';
-                }
+
+                noResults.style.display = hasResults ? 'none' : 'block';
             }
-            
-            // Add event listeners
+
             searchButton.addEventListener('click', performSearch);
             searchInput.addEventListener('keyup', (e) => {
-                if (e.key === 'Enter') {
-                    performSearch();
-                }
+                if (e.key === 'Enter') performSearch();
             });
         }
         
@@ -884,6 +875,8 @@ For completely different theme, please click on <a style="color:  #f94a8c; font-
                 window.initModal();
             }
         });
+        // Expose for search resets
+        window.__renderBarat = renderBarat;
     </script>
 </body>
 </html>
