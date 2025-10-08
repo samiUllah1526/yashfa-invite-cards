@@ -19,7 +19,7 @@ function getTheSelectedTabIntoView(){
   button.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
 }
   
-  const btnContainer = document.querySelector(".card-btn");
+// const btnContainer = document.querySelector(".card-btn");
 
 if (window.innerWidth <= 768 && typeof Swiper !== "undefined") {
   const btnWrapperEl = document.querySelector(".card-btn-wrapper");
@@ -73,11 +73,33 @@ function initModal() {
 
 // Added initModal() to the DOMContentLoaded event listener
 document.addEventListener('DOMContentLoaded', function() {
-    initCategorySlider();
+
+  try {
     initSearch();
-    // setActiveNavLink && setActiveNavLink();
-    // initModal(); // Added this line
+  } catch (error) {
+    // console.error('Error initializing search:', error);
+  }
+
+  try {
+    setActiveNavLink();
+  } catch (error) {
+    // console.error('Error initializing setActiveNavLink:', error);
+  }
+  try {
+    initModal();
+  } catch (error) {
+    // console.error('Error initializing modal:', error);
+  }
+  try {
     getTheSelectedTabIntoView();
+  } catch (error) {
+    // console.error('Error initializing setActiveNavLink:', error);
+  }
+  try {
+    initCategorySlider();
+  } catch (error) {
+    // console.error('Error initializing category slider:', error);
+  }
 });
 
 
