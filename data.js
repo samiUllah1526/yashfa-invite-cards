@@ -2,7 +2,7 @@ const NIKAH_CARDS = [
   {
     id: 1,
     name: "Royal Garden - Digital Nikkah Invitation",
-   price: "450/.",
+    price: "450/.",
     url: "https://res.cloudinary.com/dzx8o8drh/image/upload/v1758678303/no.1royal_garden_t4qkg4.jpg",
   },
   {
@@ -20,19 +20,19 @@ const NIKAH_CARDS = [
   {
     id: 4,
     name: "Olive Charm - Digital Nikkah Invitation",
-   price: "450/.",
+    price: "450/.",
     url: "https://res.cloudinary.com/dzx8o8drh/image/upload/v1758678299/no.4pastelgrace_ki8hk8.jpg",
   },
   {
     id: 5,
     name: "Golden Grace - Digital Nikkah invitation",
-   price: "350/.",
+    price: "350/.",
     url: "https://res.cloudinary.com/dzx8o8drh/image/upload/v1758678305/no.5goldengrace_nosoln.jpg"
   },
   {
     id: 6,
     name: "Rosegate Elegance - Digital nikkah Card",
-   price: "350/.",
+    price: "350/.",
     url: "https://res.cloudinary.com/dzx8o8drh/image/upload/v1758678305/no.6rosegate_xalluu.jpg",
   },
   {
@@ -46,8 +46,8 @@ const NIKAH_CARDS = [
     name: "Mystic Green - Digital nikkah invitation",
     price: "350/.",
     url: "https://res.cloudinary.com/dzx8o8drh/image/upload/v1758678303/no.7divinebond_tnnmk0.jpg",
-      }
- 
+  }
+
 ]
 
 export const ENGAGMENT_CARDS = [
@@ -66,13 +66,13 @@ export const ENGAGMENT_CARDS = [
   {
     id: 3,
     name: "Forever Promise - Digital Eng Card.",
-     price: "450/-",
+    price: "450/-",
     url: "https://res.cloudinary.com/dzx8o8drh/image/upload/v1758678784/no.3forever_ttdpws.jpg",
   },
   {
     id: 4,
     name: "Botanical Bliss - Digital Engagement Card.",
-     price: "450/-",
+    price: "450/-",
     url: "https://res.cloudinary.com/dzx8o8drh/image/upload/v1758678779/no.4Botanical_Bliss_ws94hd.jpg",
   }
 ]
@@ -82,7 +82,7 @@ export const MEHNDI_CARDS = [
   {
     id: 1,
     name: "Golden Charm - Digital Mehndi Card",
-   price: "450/-",
+    price: "450/-",
     url: "https://res.cloudinary.com/dzx8o8drh/image/upload/v1758680439/no.1_wrhokx.jpg",
   },
   {
@@ -91,7 +91,7 @@ export const MEHNDI_CARDS = [
     price: "450/-",
     url: "https://res.cloudinary.com/dzx8o8drh/image/upload/v1758680446/no.2_jbwqc6.jpg",
   },
-    {
+  {
     id: 3,
     name: "Festive Vibes - Digital Mehndi Card",
     price: "450/-",
@@ -103,13 +103,13 @@ export const MEHNDI_CARDS = [
     price: "450/-",
     url: "https://res.cloudinary.com/dzx8o8drh/image/upload/v1758680443/no.4_ctci2t.jpg",
   },
-   {
+  {
     id: 5,
     name: "Royal Curtain - Digital Mehnadi Card",
     price: "450/-",
     url: "https://res.cloudinary.com/dzx8o8drh/image/upload/v1758680446/no.5_utdi0b.jpg",
   },
-   {
+  {
     id: 6,
     name: "Outdoor Garden - Digital Mehndi Card",
     price: "450/-",
@@ -121,7 +121,7 @@ export const MEHNDI_CARDS = [
     price: "450/-",
     url: "https://res.cloudinary.com/dzx8o8drh/image/upload/v1758680449/no.7_jh5mlf.jpg",
   },
-   {
+  {
     id: 8,
     name: "Golden Drape - Digital Mehndi Card",
     price: "450/-",
@@ -142,19 +142,19 @@ export const BARAT_CARDS = [
     price: "450/-",
     url: "https://res.cloudinary.com/dzx8o8drh/image/upload/v1758681390/no.2_aixasq.jpg",
   },
-   {
+  {
     id: 3,
     name: "Ivory Blossom - Digital Barat Invitation",
     price: "450/-",
     url: "https://res.cloudinary.com/dzx8o8drh/image/upload/v1758681395/no.3_wlhfth.jpg",
   },
-   {
+  {
     id: 4,
     name: "Crimson Elegance - Digital Barat Invitation.",
     price: "450/-",
     url: "https://res.cloudinary.com/dzx8o8drh/image/upload/v1758681399/no.4_om3nzm.jpg",
   },
-   {
+  {
     id: 5,
     name: "Royal Midnight - Digital Barat Invitation",
     price: "450/-",
@@ -166,13 +166,13 @@ export const BARAT_CARDS = [
     price: "450/-",
     url: "https://res.cloudinary.com/dzx8o8drh/image/upload/v1758681401/no.6_wuviqn.jpg",
   },
-   {
+  {
     id: 7,
     name: "Imperial Grace - Digital Barat Invitation.",
     price: "450/-",
     url: "https://res.cloudinary.com/dzx8o8drh/image/upload/v1758681396/no.7_s9lhve.jpg",
   }
-  
+
 ]
 
 export const WALIMA_CARDS = [
@@ -196,17 +196,17 @@ export const WALIMA_CARDS = [
   },
   {
     id: 4,
-    name: "EEternal Blossom - Digital Walima Card",
+    name: "Eternal Blossom - Digital Walima Card",
     price: "450/-",
     url: "https://res.cloudinary.com/dzx8o8drh/image/upload/v1758681984/no.4_ortc5s.jpg",
   },
   {
     id: 5,
-    name: "Engagement Card 1Royal Serenity - Walima Card",
+    name: "Royal Serenity - Walima Card",
     price: "450/-",
     url: "https://res.cloudinary.com/dzx8o8drh/image/upload/v1758681984/no.5_xjvhwp.jpg",
   }
-  
+
 ]
 
 export const BIRTHDAY_CARDS = [
@@ -222,37 +222,37 @@ export const BIRTHDAY_CARDS = [
     price: "650/-",
     url: "https://res.cloudinary.com/dzx8o8drh/image/upload/v1758683774/no.2_h6tqvo.jpg",
   },
-   {
+  {
     id: 3,
     name: "Fairyland Tales - Digital Birthday Invitation.",
     price: "650/-",
     url: "https://res.cloudinary.com/dzx8o8drh/image/upload/v1758683777/no.3_xqkf9i.jpg",
   },
-   {
+  {
     id: 4,
     name: "Tiny Tracks - Digital Birthday Invitation.",
     price: "650/-",
     url: "https://res.cloudinary.com/dzx8o8drh/image/upload/v1758683774/no.4_rv4hmc.jpg",
   },
-   {
+  {
     id: 5,
     name: "Pink Castle - Digital Birthday Card.",
     price: "650/-",
     url: "https://res.cloudinary.com/dzx8o8drh/image/upload/v1758683775/no.5_ikyzrl.jpg",
   },
-   {
+  {
     id: 6,
     name: "Aqua Dreams - Digital Birthday Card.",
     price: "500/-",
     url: "https://res.cloudinary.com/dzx8o8drh/image/upload/v1758683780/no.6_ajmyyk.jpg",
   },
-   {
+  {
     id: 7,
     name: "Honey Bear Express - Digital Birthday Card.",
     price: "500/-",
     url: "https://res.cloudinary.com/dzx8o8drh/image/upload/v1758683780/no.7_qvnscq.jpg",
   },
-     {
+  {
     id: 8,
     name: " Golden Hive - Digital Birthday Card.",
     price: "500/-",
