@@ -415,10 +415,11 @@
             box-shadow: 0 0 0 1px #fff, 0 2px 5px rgba(0, 0, 0, 0.3);
             overflow: hidden;
             margin: 1rem 0;
-            width: 128px;
+            min-width: 128px;
             height: 46px;
             text-align: center;
             list-style: none;
+            display: inline-block;
         }
 
         .btnss:hover {
@@ -833,7 +834,7 @@
 
             .btnss {
                 flex-shrink: 0;
-                min-width: 120px;
+                min-width: 128px;
                 text-align: center;
             }
         }
