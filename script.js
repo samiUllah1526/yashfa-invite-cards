@@ -14,30 +14,25 @@
 // });
 
 
- const buttons = document.querySelectorAll(".btnss");
+function getTheSelectedTabIntoView(){
+  const button = document.querySelector(".btnss.active");
+  button.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+}
+  
   const btnContainer = document.querySelector(".card-btn");
-  let offset = 0;
 
-  // active button toggle
-  buttons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      buttons.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
+if (window.innerWidth <= 768 && typeof Swiper !== "undefined") {
+  const btnWrapperEl = document.querySelector(".card-btn-wrapper");
+  if (btnWrapperEl) {
+    var buttonSwiper = new Swiper(".card-btn-wrapper", {
+      slidesPerView: 3,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+      }
     });
-  });
-
-
-  console.log('import R')
-
-if (window.innerWidth <= 768) {
-  var buttonSwiper = new Swiper(".card-btn-wrapper", {
-    slidesPerView: 3, 
-    spaceBetween: 10,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev"
-    }
-  });
+  }
 }
 
 
@@ -80,8 +75,9 @@ function initModal() {
 document.addEventListener('DOMContentLoaded', function() {
     initCategorySlider();
     initSearch();
-    setActiveNavLink();
-    initModal(); // Added this line
+    // setActiveNavLink && setActiveNavLink();
+    // initModal(); // Added this line
+    getTheSelectedTabIntoView();
 });
 
 
